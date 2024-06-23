@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-generator</title>
+    <style>
+
+        .parent
+        {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            transition: 0.5s;
+        }
+        .child
+        {
+            height: 13rem;
+            width: 30rem;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        #second
+        {
+            border-radius: 5px;
+            height: 3rem;
+            width: 8rem;
+            font-family: fantasy;
+        }
+        h2{
+            background-color: white;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="parent">
+
+        <div class="child">
+
+            <h2 id="hcolor">#colorcode</h2>
+
+            <button id="second">click to next</button>
+
+        </div>
+
+    </div>
+    <script>
+
+       let bg=document.querySelector("body");
+       let know=document.querySelector("#hcolor")
+        let herecolor= function()
+        {
+            let randomNumber= Math.floor( Math.random()*16777215);  // 167777215 quki is number se hame result milega
+            //Math.floor decimal hata ke niche wale number par le ata hai ex 5.3 wo 5 result dega 
+            let randomcode ="#"+randomNumber.toString(16);
+            bg.style.backgroundColor=randomcode;
+            know.innerHTML=randomcode;
+
+                    console.log(randomcode);
+      
+        }
+
+        let getbutton=document.querySelector("#second");
+        getbutton.addEventListener("click",herecolor
+   )
+   herecolor();
+    </script>
+</body>
+</html>
